@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="en" >
+	
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name = "description" content = "Calculator, features all basic and advance operations">
+		<meta charset="UTF-8" >
+		<title>Calculator</title>
+		<link rel = "stylesheet" href = "./styles/index.css">
+
+	</head>
+	
+	<body>
+
+		<main id="calculator" class = "wrapper">
+
+			<div class = "case">
+
+				<div class="display">
+					<input type="text" class="expression"  aria-label="enter expression">
+				 	<span class="result"></span>
+				
+				</div>
+
+				<div class="keys-grid">
+					
+					<div class="active">
+						<button data-function="clear" class="btn" >C</button>
+						<button data-value="(" class="btn" >(</button>
+						<button data-value=")" class="btn" >)</button>
+						<button data-function="del" class="btn" aria-label="delete">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M12 9.75L14.25 12m0 0l2.25 2.25M14.25 12l2.25-2.25M14.25 12L12 14.25m-2.58 4.92l-6.375-6.375a1.125 1.125 0 010-1.59L9.42 4.83c.211-.211.498-.33.796-.33H19.5a2.25 2.25 0 012.25 2.25v10.5a2.25 2.25 0 01-2.25 2.25h-9.284c-.298 0-.585-.119-.796-.33z" />
+						 	</svg>
+						 </button>
+						<button data-value="sqrt" class="btn" >&Sqrt;</button>
+						<button data-value="%" class="btn" >&percnt;</button>
+						<button data-value="pi" class="btn" >&pi;</button>
+						<button data-value="/" class="btn" >&divide;</button>
+						<button data-value="7" class="btn" >7</button>
+						<button data-value="8" class="btn" >8</button>
+						<button data-value="9" class="btn" >9</button>
+						<button data-value="*" class="btn" >&times;</button>
+						<button data-value="4" class="btn" >4</button>
+						<button data-value="5" class="btn" >5</button>
+						<button data-value="6" class="btn" >6</button>
+						<button data-value="-" class="btn" >&minus;</button>
+						<button data-value="1" class="btn" >1</button>
+						<button data-value="2" class="btn" >2</button>
+						<button data-value="3" class="btn" >3</button>
+						<button data-value="+" class="btn" >&plus;</button>
+						<button data-value="0" class="btn" >0</button>
+						<button data-value="." class="btn" >.</button>
+						<button data-function="equal" class="btn" >&equals;</button>
+					</div>
+					
+					<div class="unhide">
+						<button class="unhide-btn" onclick = "toggleHide()" aria-label="open advance operations pannel" ></button>
+					</div>
+
+					<div class="hidden">
+						<button  data-value="sin" class="btn" >sin</button>
+						<button  data-value="cos" class="btn" >cos</button>
+						<button  data-value="tan" class="btn" >tan</button>
+						<button  data-value="log" class="btn" >log</button>
+						<button  data-value="ln" class="btn" >ln</button>
+						<button  data-value="^" class="btn" >^</button>
+						<button  data-value="abs" class="btn" >Abs</button>
+						<button  data-value="!" class="btn" >!</button>
+						<button  data-value="e" class="btn" >e</button>
+						<button  data-value="Mod" class="btn" >Mod</button>
+						<button  data-value="asin" class="btn" >asin</button>
+						<button  data-value="acos" class="btn" >acos</button>
+						<button  data-value="atan" class="btn" >atan</button>
+						<button  class="btn isDegree" onclick = "toggleDeg(this)"> deg </button>
+					</div>
+
+				</div>
+
+				<div class="theme">
+					<input type="checkbox" class="checkbox" id="checkbox" onchange = "darkMode()" aria-label="toggle theme" >
+					<label for="checkbox" class="checkbox-label">
+					  <span class="ball"></span>
+						<span class="icon-box">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+ 							</svg>
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+							</svg>
+						</span>
+					</label>
+
+				</div>
+				
+				<div class="toggleHistory" >
+					<input type="checkbox" class="checkbox" onchange = "toggleHistory()"  aria-label="toggle history pannel">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+					</svg>
+				</div>
+
+				<ul class="history">
+					<li  class="item" onclick = "resetHistory(this)" > Clear </li>
+				</ul>
+				
+			</div>
+   
+		</main>
+
+		<script src = "./scripts/math-expression-evaluator.min.js"  async> </script>
+		<script src = "./scripts/index.js" async > </script>
+<!-- 		<footer>Copyright &copy; 2027 by Shaukat Ali.</footer> -->
+	</body>
+
+</html>
