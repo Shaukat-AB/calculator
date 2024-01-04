@@ -13,3 +13,20 @@ A live demo of the application is available at:\
 - HTML
 - CSS
 - JavaScript
+
+
+## Topics
+- JavaScript ES6
+- Semantic markup
+- CSS GRID
+- JavaScript Event Delegation
+- Functional Programming
+
+
+## Features
+- Evalute mathematical expressions
+- Evalute mathematical operations
+- Evalute mathematical functions
+- Keyboard and mouse/touch support
+- Responsive UI
+- Dark Mode
